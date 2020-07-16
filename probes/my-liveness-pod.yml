@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-liveness-pod
+spec: 
+  containers: 
+  - name: myapp-container 
+    image: busybox
+    command: ['sh', '-c', 'echo Hello && sleep 3600']
+    livenessProbe: 
+      exec:  
+        command: 
+        - echo
+        - testing 
+      # Want to make sure the container is responsive to commands... 
+      # when you fire up pod, liveness probe will wait this number of seconds before executing first command
+      initialDelaySeconds: 5
+      # Interval to run command iteratively after initial delay
+      periodSeconds: 5

@@ -1,0 +1,24 @@
+cloud_user@huntaj1c:~/kube$ kubectl get pods
+NAME                     READY   STATUS              RESTARTS   AGE
+multi-container-pod      2/2     Running             0          54m
+my-configmap-pod         1/1     Running             6          9d
+my-containerport-pod     1/1     Running             1          9d
+my-liveness-pod          1/1     Running             0          112s
+my-ns-pod                1/1     Running             7          9d
+my-readiness-pod         0/1     ContainerCreating   0          4s (this is before the 5s initialdelay is reached)
+my-resource-pod          1/1     Running             1          93m
+my-secret-pod            1/1     Running             1          87m
+my-securitycontext-pod   1/1     Running             6          8d
+my-serviceaccount-pod    1/1     Running             1          80m
+cloud_user@huntaj1c:~/kube$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+multi-container-pod      2/2     Running   0          54m
+my-configmap-pod         1/1     Running   6          9d
+my-containerport-pod     1/1     Running   1          9d
+my-liveness-pod          1/1     Running   0          119s
+my-ns-pod                1/1     Running   7          9d
+my-readiness-pod         1/1     Running   0          11s (this is after 5s initialdelay)
+my-resource-pod          1/1     Running   1          94m
+my-secret-pod            1/1     Running   1          87m
+my-securitycontext-pod   1/1     Running   6          8d
+my-serviceaccount-pod    1/1     Running   1          80m
