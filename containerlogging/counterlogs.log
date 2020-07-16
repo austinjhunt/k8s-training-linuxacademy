@@ -43,3 +43,29 @@ cloud_user@huntaj1c:~/kube/containerlogging$ kubectl logs counter
 9: Thu Jul 16 03:30:47 UTC 2020
 10: Thu Jul 16 03:30:48 UTC 2020
 11: Thu Jul 16 03:30:49 UTC 2020
+
+cloud_user@huntaj1c:~/kube/containerlogging$ kubectl logs counter -c count # not necessary for single container pods; specify name of container for multi container pods
+0: Thu Jul 16 03:30:38 UTC 2020
+1: Thu Jul 16 03:30:39 UTC 2020
+2: Thu Jul 16 03:30:40 UTC 2020
+3: Thu Jul 16 03:30:41 UTC 2020
+4: Thu Jul 16 03:30:42 UTC 2020
+5: Thu Jul 16 03:30:43 UTC 2020
+6: Thu Jul 16 03:30:44 UTC 2020
+7: Thu Jul 16 03:30:45 UTC 2020
+8: Thu Jul 16 03:30:46 UTC 2020
+9: Thu Jul 16 03:30:47 UTC 2020
+10: Thu Jul 16 03:30:48 UTC 2020
+11: Thu Jul 16 03:30:49 UTC 2020
+12: Thu Jul 16 03:30:50 UTC 2020
+13: Thu Jul 16 03:30:51 UTC 2020
+14: Thu Jul 16 03:30:52 UTC 2020
+15: Thu Jul 16 03:30:53 UTC 2020
+16: Thu Jul 16 03:30:54 UTC 2020
+17: Thu Jul 16 03:30:55 UTC 2020
+18: Thu Jul 16 03:30:56 UTC 2020
+19: Thu Jul 16 03:30:57 UTC 2020
+20: Thu Jul 16 03:30:58 UTC 2020
+21: Thu Jul 16 03:30:59 UTC 2020
+22: Thu Jul 16 03:31:00 UTC 2020
+23: Thu Jul 16 03:31:01 UTC 2020

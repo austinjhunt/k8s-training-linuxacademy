@@ -1,0 +1,44 @@
+cloud_user@huntaj1c:~/kube/metricsserver/using-metrics-server$ kubectl top pods
+NAME                     CPU(cores)   MEMORY(bytes)
+counter                  1m           0Mi
+multi-container-pod      0m           3Mi
+my-configmap-pod         0m           0Mi
+my-containerport-pod     0m           5Mi
+my-liveness-pod          3m           0Mi
+my-ns-pod                0m           0Mi
+my-readiness-pod         1m           2Mi
+my-resource-pod          0m           0Mi
+my-secret-pod            0m           0Mi
+my-securitycontext-pod   0m           0Mi
+my-serviceaccount-pod    0m           0Mi
+cloud_user@huntaj1c:~/kube/metricsserver/using-metrics-server$ kubectl top pod resource-consumer-big
+NAME                    CPU(cores)   MEMORY(bytes)
+resource-consumer-big   301m         7Mi
+cloud_user@huntaj1c:~/kube/metricsserver/using-metrics-server$ kubectl top pod resource-consumer-small
+NAME                      CPU(cores)   MEMORY(bytes)
+resource-consumer-small   95m          7Mi
+
+# Top metrics of pods in the kube-system namespace. 
+cloud_user@huntaj1c:~/kube/metricsserver/using-metrics-server$ kubectl top pods -n kube-system
+NAME                                               CPU(cores)   MEMORY(bytes)
+coredns-584795fc57-fclfn                           2m           8Mi
+coredns-584795fc57-k46bz                           3m           8Mi
+etcd-huntaj1c.mylabserver.com                      19m          57Mi
+kube-apiserver-huntaj1c.mylabserver.com            25m          256Mi
+kube-controller-manager-huntaj1c.mylabserver.com   14m          40Mi
+kube-flannel-ds-amd64-drwhn                        2m           9Mi
+kube-flannel-ds-amd64-l28rz                        2m           9Mi
+kube-flannel-ds-amd64-wnr4g                        2m           9Mi
+kube-proxy-g7m5s                                   1m           13Mi
+kube-proxy-pmr58                                   1m           12Mi
+kube-proxy-qpncc                                   1m           12Mi
+kube-scheduler-huntaj1c.mylabserver.com            2m           10Mi
+metrics-server-855bb59dd8-dblgw                    1m           12Mi
+
+
+# Top metrics of cluster nodes. Really useful!
+cloud_user@huntaj1c:~/kube/metricsserver/using-metrics-server$ kubectl top nodes
+NAME                       CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
+huntaj1c.mylabserver.com   202m         10%    1418Mi          37%
+huntaj2c.mylabserver.com   822m         41%    978Mi           25%
+huntaj3c.mylabserver.com   555m         27%    1006Mi          26%
