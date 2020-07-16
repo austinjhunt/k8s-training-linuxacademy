@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-args-pod
+  namespace: my-custom-command-namespace
+  labels: 
+    purpose: my-args-pod
+    app: my-app
+spec:
+  containers: 
+  - name: my-app-container
+    image: busybox
+    command: ['echo']
+    args: ['This is my custom argument']
+  restartPolicy: Never

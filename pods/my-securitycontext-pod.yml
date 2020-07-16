@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-securitycontext-pod
+spec: 
+  containers: 
+  - name: my-app-container
+    volumeMounts:
+    - name: message-volume 
+      mountPath: /message
+    image: busybox
+    command: ['sh', '-c', 'cat /message/message.txt && sleep 3600']
+  volumes: 
+  - name: message-volume
+    hostPath:
+      path: /etc/message
+
+  securityContext: 
+  # runAsUser: 2001  cannot read or write
+  # fsGroup: 3001 cannot read or write
+    runAsUser: 2000 # can read and write to the file. 
+    fsGroup: 3000 # can read the file

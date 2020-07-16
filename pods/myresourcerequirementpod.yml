@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-resource-pod
+spec: 
+  containers: 
+  - name: myapp-container
+    image: busybox
+    command: ['sh','-c','echo Hello Kubernetes! && sleep 3600']
+    resources: 
+      requests: 
+        memory: '64Mi'
+        cpu: '250m'
+      limits: 
+        memory: '128Mi'
+        cpu: '500m'
+# Memory is measured in bytes. 64 Mi is 64 Megabibytes.
+# CPU is measured in "cores." 250m is 250 milliCPUs, or 0.25 cores. 

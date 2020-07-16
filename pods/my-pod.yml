@@ -1,0 +1,13 @@
+# What is the latest version?
+apiVersion: v1
+kind: Pod # Defining a pod here. 
+metadata:
+  name: my-pod # Name the pod. 
+  labels: 
+    app: my-app # Give it a label. Helps with automation within kluster, as well as organization.
+    label-2: hello
+spec: 
+  containers: # A pod can run one or more containers. Here, specify what containers you want to run in your pod.
+  - name: my-app-container 
+    image: busybox # What image are you running? 
+    command: ['sh', '-c', 'echo Hello Kubernetes! && sleep 3600' ] # really similar to a docker-compose file at this point. 
