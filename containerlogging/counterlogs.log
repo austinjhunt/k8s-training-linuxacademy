@@ -1,0 +1,45 @@
+cloud_user@huntaj1c:~/kube/containerlogging$ kubectl apply -f my-logging-container.yml
+pod/counter created
+cloud_user@huntaj1c:~/kube/containerlogging$ kubectl logs counter
+0: Thu Jul 16 03:30:38 UTC 2020
+1: Thu Jul 16 03:30:39 UTC 2020
+2: Thu Jul 16 03:30:40 UTC 2020
+3: Thu Jul 16 03:30:41 UTC 2020
+4: Thu Jul 16 03:30:42 UTC 2020
+5: Thu Jul 16 03:30:43 UTC 2020
+6: Thu Jul 16 03:30:44 UTC 2020
+cloud_user@huntaj1c:~/kube/containerlogging$ kubectl logs counter
+0: Thu Jul 16 03:30:38 UTC 2020
+1: Thu Jul 16 03:30:39 UTC 2020
+2: Thu Jul 16 03:30:40 UTC 2020
+3: Thu Jul 16 03:30:41 UTC 2020
+4: Thu Jul 16 03:30:42 UTC 2020
+5: Thu Jul 16 03:30:43 UTC 2020
+6: Thu Jul 16 03:30:44 UTC 2020
+7: Thu Jul 16 03:30:45 UTC 2020
+8: Thu Jul 16 03:30:46 UTC 2020
+cloud_user@huntaj1c:~/kube/containerlogging$ kubectl logs counter
+0: Thu Jul 16 03:30:38 UTC 2020
+1: Thu Jul 16 03:30:39 UTC 2020
+2: Thu Jul 16 03:30:40 UTC 2020
+3: Thu Jul 16 03:30:41 UTC 2020
+4: Thu Jul 16 03:30:42 UTC 2020
+5: Thu Jul 16 03:30:43 UTC 2020
+6: Thu Jul 16 03:30:44 UTC 2020
+7: Thu Jul 16 03:30:45 UTC 2020
+8: Thu Jul 16 03:30:46 UTC 2020
+9: Thu Jul 16 03:30:47 UTC 2020
+10: Thu Jul 16 03:30:48 UTC 2020
+cloud_user@huntaj1c:~/kube/containerlogging$ kubectl logs counter
+0: Thu Jul 16 03:30:38 UTC 2020
+1: Thu Jul 16 03:30:39 UTC 2020
+2: Thu Jul 16 03:30:40 UTC 2020
+3: Thu Jul 16 03:30:41 UTC 2020
+4: Thu Jul 16 03:30:42 UTC 2020
+5: Thu Jul 16 03:30:43 UTC 2020
+6: Thu Jul 16 03:30:44 UTC 2020
+7: Thu Jul 16 03:30:45 UTC 2020
+8: Thu Jul 16 03:30:46 UTC 2020
+9: Thu Jul 16 03:30:47 UTC 2020
+10: Thu Jul 16 03:30:48 UTC 2020
+11: Thu Jul 16 03:30:49 UTC 2020
