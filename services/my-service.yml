@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: my-service
+spec: 
+  # Service type
+  type: ClusterIP # default, most common in production scenarios. if you want to build a service accessible by other pods in the cluster, use this. 
+  # This is how the service knows which pods to direct/proxy the client network traffic to. Any pod with a label app:nginx
+  selector:
+    app: nginx
+  ports: 
+  - protocol: TCP
+    # Specifies the ports the service will listen on and which one clients will use to access it
+    port: 8080
+    # Specifies the port that traffic will be forwarded to on the pods. If the port and target port are the same, you can omit the targetPort. 
+    targetPort: 80
+  
