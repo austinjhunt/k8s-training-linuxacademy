@@ -1,0 +1,32 @@
+#!/bin/bash
+cloud_user@huntaj1c:~/kube/debugging$ kubectl get pods --all-namespaces
+NAMESPACE                     NAME                                               READY   STATUS      RESTARTS   AGE
+default                       counter                                            1/1     Running     0          18m
+default                       multi-container-pod                                2/2     Running     0          76m
+default                       my-configmap-pod                                   1/1     Running     7          9d
+default                       my-containerport-pod                               1/1     Running     1          9d
+default                       my-liveness-pod                                    1/1     Running     0          23m
+default                       my-ns-pod                                          1/1     Running     8          9d
+default                       my-readiness-pod                                   1/1     Running     0          21m
+default                       my-resource-pod                                    1/1     Running     1          115m
+default                       my-secret-pod                                      1/1     Running     1          108m
+default                       my-securitycontext-pod                             1/1     Running     7          9d
+default                       my-serviceaccount-pod                              1/1     Running     1          102m
+default                       resource-consumer-big                              2/2     Running     0          8m15s
+default                       resource-consumer-small                            2/2     Running     0          8m8s
+kube-system                   coredns-584795fc57-fclfn                           1/1     Running     1          9d
+kube-system                   coredns-584795fc57-k46bz                           1/1     Running     1          9d
+kube-system                   etcd-huntaj1c.mylabserver.com                      1/1     Running     1          9d
+kube-system                   kube-apiserver-huntaj1c.mylabserver.com            1/1     Running     1          9d
+kube-system                   kube-controller-manager-huntaj1c.mylabserver.com   1/1     Running     1          9d
+kube-system                   kube-flannel-ds-amd64-drwhn                        1/1     Running     1          9d
+kube-system                   kube-flannel-ds-amd64-l28rz                        1/1     Running     1          9d
+kube-system                   kube-flannel-ds-amd64-wnr4g                        1/1     Running     1          9d
+kube-system                   kube-proxy-g7m5s                                   1/1     Running     1          9d
+kube-system                   kube-proxy-pmr58                                   1/1     Running     1          9d
+kube-system                   kube-proxy-qpncc                                   1/1     Running     1          9d
+kube-system                   kube-scheduler-huntaj1c.mylabserver.com            1/1     Running     1          9d
+kube-system                   metrics-server-855bb59dd8-dblgw                    1/1     Running     0          12m
+my-custom-command-namespace   my-args-pod                                        0/1     Completed   0          9d
+my-custom-command-namespace   my-command-pod                                     0/1     Completed   0          9d
+my-ns                         my-ns-pod                                          1/1     Running     8          9d
