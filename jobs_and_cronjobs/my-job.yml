@@ -1,0 +1,15 @@
+apiVersion: batch/v1 # Jobs belong to the batch api so we need to specify this
+kind: Job
+metadata: 
+  name: my-pi-job
+  labels:  
+    purpose: calc-2000-digits-of-pi 
+spec: 
+  template:  
+    spec: 
+      containers: 
+      - name: pi 
+        image: perl
+        command: ['perl', '-Mbignum=bpi', '-wle', 'print bpi(2000)']
+      restartPolicy: Never
+  backoffLimit: 4

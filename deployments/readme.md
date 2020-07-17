@@ -1,4 +1,4 @@
-# Deployments
+# Deployments (use the apps/v1 API)
 Deployments provide a way to declaratively manage a dynamic set of replica pods. 
 (SIMILAR TO DOCKER SWARM)
 They provide powerful functionality like scaling and rolling updates. 
