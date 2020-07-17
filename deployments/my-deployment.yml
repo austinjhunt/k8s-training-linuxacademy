@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Deployment
+metadata: 
+  name: nginx-deployment 
+spec: 
+  replicas: 3 # Number of replica pods
+  selector: # The deployment will manage all pods whose labels match this selector. 
+    matchLabels: 
+      app: nginx
+  template: # A template pod descriptor defining the pods to be created. 
+    metadata: 
+      labels: 
+        app: nginx
+    spec: 
+      containers: 
+      - name: nginx
+        image: nginx
+        ports: 
+        - containerPort: 80
