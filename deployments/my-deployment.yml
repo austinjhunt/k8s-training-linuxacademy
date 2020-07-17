@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1 # Deployments are part of the apps API so we need to specify that.
 kind: Deployment
 metadata: 
   name: nginx-deployment 
@@ -7,13 +7,14 @@ spec:
   selector: # The deployment will manage all pods whose labels match this selector. 
     matchLabels: 
       app: nginx
-  template: # A template pod descriptor defining the pods to be created. 
+  template: # A template pod descriptor defining the pods to be created. DESIRED STATE OF OUR MANAGED PODS.
     metadata: 
-      labels: 
+      namespace: deployed-pod-namespace
+      labels: # VERY IMPORTANT : make sure the labels of your template match the selector.matchLabels value(s)
         app: nginx
     spec: 
       containers: 
       - name: nginx
-        image: nginx
-        ports: 
+        image: nginx:1.7.9
+        ports: # Expose the port 80 for nginx container using containerPort: 80
         - containerPort: 80
