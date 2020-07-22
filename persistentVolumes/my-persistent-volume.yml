@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+  name: my-pv
+spec:
+  # Very important; will determine which PVCs will be able to bind this volume.  
+  # you can enter any value here.  
+  storageClassName: local-storage
+  capacity: 
+    # Total amount of storage this volume is able to provide. 
+    storage: 1Gi # (1 gigabyte) 
+  accessModes: 
+    # Different types of storage allow different access modes. This mode says that this PV can be mounted   
+    # in ReadWrite mode but only to one pod at a time.
+    - ReadWriteOnce
+  hostPath: # allocate storage on node in cluster (on the node where the pod that is consuming the storage lives)
+    path: "/mnt/data"
+
