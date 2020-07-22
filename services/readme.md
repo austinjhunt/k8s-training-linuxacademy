@@ -21,7 +21,6 @@ my-service   ClusterIP   10.100.39.16   <none>        8080/TCP   10s
 
 # Endpoints (connections between a service and the backend pods serving the requests)
 
-```
 cloud_user@huntaj1c:~/kube/services$ kubectl get endpoints my-service # Get the endpoints for this service. An endpoint is the connection between the service and the backend pod(s)
 NAME         ENDPOINTS                                                  AGE
 my-service   10.244.1.43:80,10.244.1.48:80,10.244.1.52:80 + 6 more...   59s
