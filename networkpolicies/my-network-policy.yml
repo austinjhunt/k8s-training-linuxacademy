@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: my-net-policy
+spec: 
+  # which pods do you want the policy to apply to? 
+  podSelector: 
+    matchLabels:
+      app: secure-app # answer: pods with the label, 'secure-app'
+  # sets whether the policy governs INCOMING (ingress), OUTGOING (egress), or both
+  policyTypes:
+  - Ingress
+  - Egress
+
+  # Rules for incoming traffic.
+  ingress:
+    # whitelist certain incoming traffic. allow traffic from pods with label allow-access='true'
+  - from: 
+    - podSelector: 
+        matchLabels: 
+          allow-access: "true"
+    # Allow traffic to port 80 
+    ports:
+    - protocol: TCP
+      port: 80
+  egress: 
+  - to: 
+    - podSelector: 
+        matchLabels: 
+          allow-access: "true"
+    # Allow traffic to port 80 
+    ports:
+    - protocol: TCP
+      port: 80
+
+          
